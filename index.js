@@ -10,11 +10,15 @@ var FrameBuffer = new Class({
 	 * It's advised to use FrameBuffer.getMaxSize(gl) as a utility to ensure
 	 * your texture is under the hardware limits. If it exceeds this size in
 	 * either dimension, this constructor will throw an error.
+	 *
+	 * If `texture` is provided to the options, we will use that as the 
+	 * color buffer texture and grab its width/height.
 	 * 
 	 * @class  FrameBuffer
 	 * @param {WebGLRenderingContext|kami-context} context the gl/kami context
 	 * @param {Number} options.width the width of the texture, must be >= 1
 	 * @param {Number} options.height the height of the texture, must be >= 1
+	 * @param {kami-texture} options.texture optional texture
 	 * @constructor
 	 */
 	initialize: function FrameBuffer(context, options) { //TODO: depth component
@@ -38,11 +42,20 @@ var FrameBuffer = new Class({
 		 */
 		this.context = wrapContext(context);
 
+		//If a texture is passed, use that instead of creating a new one...
+		if (options.texture) {
+			options.width = options.texture.width;
+			options.height = options.texture.height;	
+		}
+
+		if (typeof options.width !== "number" || typeof options.height !== "number")
+			throw new Error("must specify width and height to frame buffer");
+
 		var width = Math.max(1, options.width||0);
 		var height = Math.max(1, options.height||0);
 		var maxSize = FrameBuffer.getMaxSize(this.context.gl);
 		if (width > maxSize || height > maxSize) {
-			throw new Error("FrameBuffer is above available renderbuffer size ("+maxSize+")")
+			throw new Error("FrameBuffer is above available renderbuffer size ("+maxSize+")");
 		}
 
 		/**
@@ -51,7 +64,7 @@ var FrameBuffer = new Class({
 		 * @property {Texture} Texture
 		 */
 		//this Texture is now managed.
-		this.texture = new Texture(context, {
+		this.texture = options.texture || new Texture(context, {
 			width: width,
 			height: height,
 			format: options.format
