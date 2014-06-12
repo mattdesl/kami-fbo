@@ -1,5 +1,3 @@
-[![browser support](https://ci.testling.com/mattdesl/kami-fbo.png)](https://ci.testling.com/mattdesl/kami-fbo)
-
 # kami-fbo
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
