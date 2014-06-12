@@ -1,0 +1,55 @@
+{
+  "name": "kami-fbo",
+  "version": "1.0.0",
+  "description": "2D framebuffer (render-to-texture) utils for kami",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Matt DesLauriers <dave.des@gmail.com>",
+  "dependencies": {
+    "kami-util": "~1.1.0",
+    "klasse": "~1.0.8",
+    "kami-texture": "~1.0.1"
+  },
+  "devDependencies": {
+    "tape": "~2.13.2",
+    "webgl-context": "~1.2.1"
+  },
+  "scripts": {
+    "test": "browserify test.js | testling -x open"
+  },
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/kami-fbo.git"
+  },
+  "homepage": "https://github.com/mattdesl/kami-fbo",
+  "bugs": {
+    "url": "https://github.com/mattdesl/kami-fbo/issues"
+  },
+  "keywords": [
+    "fbo",
+    "framebuffer",
+    "frame",
+    "buffer",
+    "object",
+    "webgl",
+    "glsl",
+    "opengl",
+    "render",
+    "texture",
+    "render-to-texture",
+    "rendertexture"
+  ]
+}
