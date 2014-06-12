@@ -192,6 +192,7 @@ var FrameBuffer = new Class({
 FrameBuffer.getMaxSize = function(gl) {
 	if (!gl)
 		throw "no gl specified to FrameBuffer.getMaxSize";
+	//TODO: cache this?
 	return gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
 };
 

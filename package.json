@@ -8,7 +8,7 @@
   "dependencies": {
     "kami-util": "~1.1.0",
     "klasse": "~1.0.8",
-    "kami-texture": "~1.0.1"
+    "kami-texture": "~1.0.4"
   },
   "devDependencies": {
     "tape": "~2.13.2",
