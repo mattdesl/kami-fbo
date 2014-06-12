@@ -21,7 +21,7 @@ test('making FBO with texture', function(t) {
 
     t.ok(data[0]===255 && data[1]===255 && data[2]===255, 'readPixels from texture via FBO works');
     t.end();
-})
+});
 
 test('making FBO without texture', function(t) {
     var f = new FBO(gl, {width: 1, height:256});

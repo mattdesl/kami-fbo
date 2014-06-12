@@ -13,7 +13,6 @@
   "devDependencies": {
     "tape": "~2.13.2",
     "webgl-context": "~1.2.1",
-    "kami-texture": "~1.0.4",
     "kami-white-texture": "~1.0.0"
   },
   "scripts": {
