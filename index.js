@@ -20,9 +20,11 @@ var FrameBuffer = new Class({
 	 * 
 	 * @class  FrameBuffer
 	 * @param {WebGLRenderingContext|kami-context} context the gl/kami context
-	 * @param {Number} options.width the width of the texture, must be >= 1
-	 * @param {Number} options.height the height of the texture, must be >= 1
-	 * @param {kami-texture} options.texture optional texture
+	 * @param {Object} options the options for initialization
+	 *   @param {Number} options.width the width of the texture, must be >= 1
+	 *   @param {Number} options.height the height of the texture, must be >= 1
+	 *   @param {GLenum} options.format the format of the texture, default gl.RGBA
+	 *   @param {Texture} options.texture a kami-texture to use instead of creating a new one
 	 * @constructor
 	 */
 	initialize: function FrameBuffer(context, options) { //TODO: depth component
