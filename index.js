@@ -1,4 +1,6 @@
-/** @module  kami-fbo */
+/** 
+ * @module  kami-fbo
+ */
 
 var Class = require('klasse');
 var Texture = require('kami-texture');
