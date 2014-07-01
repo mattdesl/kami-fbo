@@ -7,7 +7,7 @@ if (!gl)
 
 test('making FBO with texture', function(t) {
     var tex = require('kami-white-texture')(gl);
-    var f = new FBO(gl, {
+    var f = FBO(gl, {
         texture: tex
     });
 

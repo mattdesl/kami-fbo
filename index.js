@@ -4,7 +4,7 @@
 
 var Class = require('klasse');
 var Texture = require('kami-texture');
-var wrapContext = require('kami-util').wrapContext;
+var BaseObject = require('kami-util').BaseObject;
 
 var FrameBuffer = new Class({
 
@@ -30,8 +30,14 @@ var FrameBuffer = new Class({
 	initialize: function FrameBuffer(context, options) { //TODO: depth component
 		if (!(this instanceof FrameBuffer))
 			return new FrameBuffer(context, options);
-		if (!context || typeof context !== "object")
-			throw "valid GL context not specified to FrameBuffer";
+		
+		BaseObject.call(this, context);
+
+		/**
+		 * The WebGLContext backed by this frame buffer.
+		 *
+		 * @property {WebGLContext} context
+		 */
 		options = options||{};
 
 		/**
@@ -40,13 +46,6 @@ var FrameBuffer = new Class({
 		 * @property {WebGLFramebuffer} id
 		 */		
 		this.id = null;
-
-		/**
-		 * The WebGLContext backed by this frame buffer.
-		 *
-		 * @property {WebGLContext} context
-		 */
-		this.context = wrapContext(context);
 
 		//If a texture is passed, use that instead of creating a new one...
 		if (options.texture) {

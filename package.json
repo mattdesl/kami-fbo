@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "Matt DesLauriers <dave.des@gmail.com>",
   "dependencies": {
-    "kami-util": "~1.1.0",
-    "klasse": "~1.0.8",
-    "kami-texture": "~1.0.4"
+    "kami-texture": "~1.0.4",
+    "kami-util": "^1.1.2",
+    "klasse": "~1.0.8"
   },
   "devDependencies": {
     "tape": "~2.13.2",
